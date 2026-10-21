@@ -7,6 +7,8 @@
     "packages/*"
   ],
   "scripts": {
+    "build": "npm run build --workspace=@factoryos/web",
+    "start": "npm run start --workspace=@factoryos/web",
     "dev": "npm run dev --workspace=@factoryos/web",
     "dev:web": "npm run dev --workspace=@factoryos/web",
     "build:web": "npm run build --workspace=@factoryos/web",
