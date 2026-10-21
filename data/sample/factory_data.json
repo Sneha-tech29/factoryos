@@ -1,0 +1,242 @@
+{
+  "_metadata": {
+    "dataset_name": "Standard Indian MSME Printing Factory Benchmark Dataset",
+    "status": "[SAMPLE DATA] - Strictly for demonstration and deterministic verification",
+    "industry": "Commercial Printing & Packaging",
+    "currency": "INR",
+    "timezone": "Asia/Kolkata"
+  },
+  "factory": {
+    "id": "fac_sample_01",
+    "name": "Apex Print & Pack Solutions",
+    "location": "Okhla Industrial Area, Phase II, New Delhi",
+    "shifts_per_day": 2,
+    "shift_hours": 8,
+    "operating_days_per_week": 6
+  },
+  "machines": [
+    {
+      "id": "mch_heidelberg_cx104",
+      "name": "Heidelberg Speedmaster CX 104 (4-Color)",
+      "type": "OFFSET",
+      "speed_units_per_hr": 12000,
+      "setup_time_mins": 35,
+      "hourly_rate_inr": 2800,
+      "status": "RUNNING",
+      "current_job_id": "job_1042_print"
+    },
+    {
+      "id": "mch_xerox_versant",
+      "name": "Xerox Versant 80 Production Press",
+      "type": "DIGITAL",
+      "speed_units_per_hr": 4800,
+      "setup_time_mins": 10,
+      "hourly_rate_inr": 1600,
+      "status": "IDLE",
+      "current_job_id": null
+    },
+    {
+      "id": "mch_polar_guillotine",
+      "name": "Polar 115 High-Speed Guillotine Cutter",
+      "type": "CUTTING",
+      "speed_units_per_hr": 8000,
+      "setup_time_mins": 15,
+      "hourly_rate_inr": 900,
+      "status": "RUNNING",
+      "current_job_id": "job_1041_cut"
+    },
+    {
+      "id": "mch_muller_martini",
+      "name": "Muller Martini Saddle Stitcher & Binder",
+      "type": "BINDING",
+      "speed_units_per_hr": 5000,
+      "setup_time_mins": 45,
+      "hourly_rate_inr": 1400,
+      "status": "MAINTENANCE",
+      "current_job_id": null
+    }
+  ],
+  "materials": [
+    {
+      "id": "mat_artcard_300gsm",
+      "sku": "PAP-AC-300",
+      "name": "300 GSM Royal Art Card (25x36 in)",
+      "category": "PAPER",
+      "unit": "REAMS",
+      "physical_stock": 140,
+      "reserved_stock": 45,
+      "damaged_stock": 5,
+      "unit_cost_inr": 3200,
+      "reorder_threshold": 30
+    },
+    {
+      "id": "mat_gloss_130gsm",
+      "sku": "PAP-GL-130",
+      "name": "130 GSM Premium Gloss Art Paper (23x36 in)",
+      "category": "PAPER",
+      "unit": "REAMS",
+      "physical_stock": 85,
+      "reserved_stock": 70,
+      "damaged_stock": 2,
+      "unit_cost_inr": 1850,
+      "reorder_threshold": 25
+    },
+    {
+      "id": "mat_maplitho_80gsm",
+      "sku": "PAP-ML-80",
+      "name": "80 GSM Natural Shade Maplitho (20x30 in)",
+      "category": "PAPER",
+      "unit": "REAMS",
+      "physical_stock": 210,
+      "reserved_stock": 120,
+      "damaged_stock": 8,
+      "unit_cost_inr": 1150,
+      "reorder_threshold": 50
+    },
+    {
+      "id": "mat_duplex_250gsm",
+      "sku": "PAP-DX-250",
+      "name": "250 GSM Grey-back Duplex Board (31x43 in)",
+      "category": "PAPER",
+      "unit": "SHEETS",
+      "physical_stock": 12500,
+      "reserved_stock": 8000,
+      "damaged_stock": 200,
+      "unit_cost_inr": 14.5,
+      "reorder_threshold": 3000
+    },
+    {
+      "id": "mat_cmyk_inks",
+      "sku": "INK-PROCESS-SET",
+      "name": "Hubergroup Process CMYK Offset Ink Set (4x2.5 kg)",
+      "category": "INK",
+      "unit": "SETS",
+      "physical_stock": 28,
+      "reserved_stock": 12,
+      "damaged_stock": 0,
+      "unit_cost_inr": 4500,
+      "reorder_threshold": 8
+    },
+    {
+      "id": "mat_ctp_plates",
+      "sku": "PLT-THERMAL-1030",
+      "name": "Kodak Sonora Thermal CTP Offset Plates",
+      "category": "PLATE",
+      "unit": "BOXES",
+      "physical_stock": 42,
+      "reserved_stock": 18,
+      "damaged_stock": 1,
+      "unit_cost_inr": 6200,
+      "reorder_threshold": 10
+    }
+  ],
+  "orders": [
+    {
+      "id": "ord_1042",
+      "order_number": "ORD-2026-1042",
+      "customer_name": "Bharat Pharma Global Ltd",
+      "product_type": "Multi-Color Product Catalog & Brochure (16 pages)",
+      "quantity": 20000,
+      "unit": "PIECES",
+      "agreed_price_inr": 185000,
+      "created_at": "2026-10-18T10:00:00Z",
+      "deadline": "2026-10-22T17:00:00Z",
+      "status": "IN_PRODUCTION",
+      "risk_rating": "POSSIBLE_WITH_RISK",
+      "risk_reason": "Gloss paper stock reserved near capacity (85% committed); tight lamination window before cutter.",
+      "required_materials": [
+        { "material_id": "mat_gloss_130gsm", "quantity": 40, "unit": "REAMS" },
+        { "material_id": "mat_cmyk_inks", "quantity": 4, "unit": "SETS" },
+        { "material_id": "mat_ctp_plates", "quantity": 8, "unit": "BOXES" }
+      ]
+    },
+    {
+      "id": "ord_1043",
+      "order_number": "ORD-2026-1043",
+      "customer_name": "Sun Herbal Wellness",
+      "product_type": "Monocarton Medicine Outer Boxes with UV Coating",
+      "quantity": 5000,
+      "unit": "PIECES",
+      "agreed_price_inr": 72500,
+      "created_at": "2026-10-17T14:30:00Z",
+      "deadline": "2026-10-25T18:00:00Z",
+      "status": "SCHEDULED",
+      "risk_rating": "SAFE",
+      "risk_reason": "All duplex board stock verified in warehouse; cutter scheduled with 18-hr safety margin.",
+      "required_materials": [
+        { "material_id": "mat_duplex_250gsm", "quantity": 5200, "unit": "SHEETS" },
+        { "material_id": "mat_cmyk_inks", "quantity": 2, "unit": "SETS" }
+      ]
+    },
+    {
+      "id": "ord_1044",
+      "order_number": "ORD-2026-1044",
+      "customer_name": "Gyan Mandir Publication Trust",
+      "product_type": "Single-Color Exam Preparation Manuals (128 pages)",
+      "quantity": 50000,
+      "unit": "PIECES",
+      "agreed_price_inr": 480000,
+      "created_at": "2026-10-19T09:15:00Z",
+      "deadline": "2026-10-24T12:00:00Z",
+      "status": "FEASIBILITY_PENDING",
+      "risk_rating": "NOT_RECOMMENDED",
+      "risk_reason": "Requires 140 reams Maplitho; only 82 reams usable available. Supplier delivery pending.",
+      "required_materials": [
+        { "material_id": "mat_maplitho_80gsm", "quantity": 140, "unit": "REAMS" }
+      ]
+    },
+    {
+      "id": "ord_1045",
+      "order_number": "ORD-2026-1045",
+      "customer_name": "Nexus Fintech Advisory",
+      "product_type": "Velvet Touch Executive Business Cards with Gold Foil",
+      "quantity": 2000,
+      "unit": "PIECES",
+      "agreed_price_inr": 18000,
+      "created_at": "2026-10-19T11:00:00Z",
+      "deadline": "2026-10-20T16:00:00Z",
+      "status": "SCHEDULED",
+      "risk_rating": "SAFE",
+      "risk_reason": "Digital press slot allocated; 300 GSM art card verified in primary bay.",
+      "required_materials": [
+        { "material_id": "mat_artcard_300gsm", "quantity": 3, "unit": "REAMS" }
+      ]
+    },
+    {
+      "id": "ord_1046",
+      "order_number": "ORD-2026-1046",
+      "customer_name": "Delhi Public Institute",
+      "product_type": "Academic Annual Report & Prospectus (48 pages)",
+      "quantity": 10000,
+      "unit": "PIECES",
+      "agreed_price_inr": 145000,
+      "created_at": "2026-10-16T16:00:00Z",
+      "deadline": "2026-10-23T14:00:00Z",
+      "status": "IN_PRODUCTION",
+      "risk_rating": "POSSIBLE_WITH_RISK",
+      "risk_reason": "Saddle stitcher machine under routine maintenance until tomorrow morning.",
+      "required_materials": [
+        { "material_id": "mat_artcard_300gsm", "quantity": 12, "unit": "REAMS" },
+        { "material_id": "mat_gloss_130gsm", "quantity": 24, "unit": "REAMS" }
+      ]
+    }
+  ],
+  "downtime_categories": [
+    "BREAKDOWN",
+    "SETUP_CHANGEOVER",
+    "MATERIAL_WAITING",
+    "OPERATOR_UNAVAILABLE",
+    "QUALITY_ISSUE",
+    "REWORK",
+    "MAINTENANCE",
+    "OTHER"
+  ],
+  "waste_reasons": [
+    "MAKE_READY_SHEETS",
+    "REGISTRATION_MISALIGNMENT",
+    "COLOR_DENSITY_FLUCTUATION",
+    "INK_SMUDGING",
+    "CUTTER_BLADE_TRIM_DEFECT",
+    "PAPER_JAM_DAMAGE"
+  ]
+}

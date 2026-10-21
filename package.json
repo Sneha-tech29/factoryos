@@ -1,0 +1,18 @@
+{
+  "name": "factoryos-monorepo",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace=@factoryos/web",
+    "dev:web": "npm run dev --workspace=@factoryos/web",
+    "build:web": "npm run build --workspace=@factoryos/web",
+    "start:web": "npm run start --workspace=@factoryos/web",
+    "lint:web": "npm run lint --workspace=@factoryos/web",
+    "test:web": "npm run test --workspace=@factoryos/web",
+    "test:api": "pytest apps/api/tests"
+  }
+}

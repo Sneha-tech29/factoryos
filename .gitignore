@@ -1,0 +1,170 @@
+# ==============================================================================
+# FactoryOS Master .gitignore
+# Production-grade Git exclusion rules for Next.js, Node.js, and SQLite Monorepo
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. ENVIRONMENT VARIABLES & SECRETS (STRICTLY CONFIDENTIAL - NEVER COMMIT)
+# ------------------------------------------------------------------------------
+.env
+.env.*
+*.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env*.local
+**/.env
+**/.env.*
+**/*.env
+**/.env*.local
+
+# Allow documented environment template examples only
+!.env.example
+!**/.env.example
+
+# Cryptographic Keys, Private Certificates, and Service Accounts
+*.pem
+*.key
+*.cert
+*.crt
+*.pfx
+*.p12
+*.pkcs12
+id_rsa*
+id_ecdsa*
+id_ed25519*
+secrets/
+**/secrets/**
+credentials/
+**/credentials/**
+*credentials*.json
+*serviceAccountKey*.json
+*token*.json
+service-account.json
+
+# ------------------------------------------------------------------------------
+# 2. LOCAL DATABASES & STORAGE ENGINES (CONTAINS HASHES, SALTS & SESSIONS)
+# ------------------------------------------------------------------------------
+data/db/
+**/data/db/**
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite3
+*.sqlite-wal
+*.sqlite-shm
+storage/
+**/storage/**
+uploads/
+**/uploads/**
+
+# ------------------------------------------------------------------------------
+# 3. SCRATCH, AUDIT & TEMPORARY SCRIPTS
+# ------------------------------------------------------------------------------
+scratch/
+**/scratch/**
+temp/
+**/temp/**
+tmp/
+**/tmp/**
+*.tmp
+*.bak
+*.swp
+*.swo
+*~
+
+# ------------------------------------------------------------------------------
+# 4. DEPENDENCIES & PACKAGE MANAGERS
+# ------------------------------------------------------------------------------
+node_modules/
+**/node_modules/**
+.pnp
+.pnp.js
+.yarn/cache/
+.yarn/unplugged/
+.yarn/build-state.yml
+
+# ------------------------------------------------------------------------------
+# 5. BUILD OUTPUTS, BUNDLES & CACHES
+# ------------------------------------------------------------------------------
+.next/
+**/.next/**
+out/
+**/out/**
+dist/
+**/dist/**
+build/
+**/build/**
+.turbo/
+**/.turbo/**
+.cache/
+**/.cache/**
+.eslintcache
+.parcel-cache
+.nyc_output/
+coverage/
+**/coverage/**
+
+# Redundant uncompressed raw animation frames (optimized WebP frames in webp/ are used)
+apps/web/public/hero-frames/*.png
+
+# ------------------------------------------------------------------------------
+# 6. TYPESCRIPT COMPILATION ARTIFACTS
+# ------------------------------------------------------------------------------
+*.tsbuildinfo
+**/*.tsbuildinfo
+next-env.d.ts
+**/next-env.d.ts
+
+# ------------------------------------------------------------------------------
+# 7. PYTHON BYTECODE, VIRTUAL ENVS & TEST CACHES
+# ------------------------------------------------------------------------------
+__pycache__/
+**/__pycache__/**
+*.py[cod]
+*$py.class
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+**/.pytest_cache/**
+.coverage
+htmlcov/
+.venv/
+**/venv/**
+**/env/**
+
+# ------------------------------------------------------------------------------
+# 8. LOGS, PROCESS DUMPS & DIAGNOSTICS
+# ------------------------------------------------------------------------------
+*.log
+**/*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ------------------------------------------------------------------------------
+# 9. OPERATING SYSTEM & EDITOR METADATA
+# ------------------------------------------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+[Dd]esktop.ini
+
+# IDE & Editor files
+.idea/
+**/.idea/**
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+*.sublime-project
+*.sublime-workspace

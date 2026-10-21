@@ -1,0 +1,199 @@
+@import '../styles/tokens.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: var(--bg-deep);
+    color: var(--text-primary);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* Accessible focus rings */
+  :focus-visible {
+    outline: 2px solid var(--accent-cyan);
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  /* Industrial Control Room Surfaces */
+  .panel-control {
+    background-color: var(--bg-panel);
+    border: 1px solid var(--border-subtle);
+    box-shadow: var(--shadow-panel);
+  }
+
+  .panel-control-elevated {
+    background-color: var(--bg-panel-elevated);
+    border: 1px solid var(--border-strong);
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .panel-control-subtle {
+    background-color: var(--bg-midnight);
+    border: 1px solid var(--border-subtle);
+  }
+
+  .hairline-b {
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .hairline-r {
+    border-right: 1px solid var(--border-subtle);
+  }
+
+  .hairline-t {
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  .hairline-l {
+    border-left: 1px solid var(--border-subtle);
+  }
+
+  .glass-panel {
+    background: rgba(16, 34, 46, 0.65);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(145, 190, 210, 0.16);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45);
+  }
+
+  .glass-panel-elevated {
+    background: rgba(22, 44, 60, 0.75);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(101, 216, 245, 0.28);
+    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.55), 0 0 20px rgba(101, 216, 245, 0.1);
+  }
+
+  .glass-pill {
+    background: rgba(16, 34, 46, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(145, 190, 210, 0.2);
+  }
+
+  .text-gradient-cyan-mint {
+    background: linear-gradient(135deg, #65D8F5 0%, #77E8C2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .btn-gradient-cyan-mint {
+    background: linear-gradient(135deg, #65D8F5 0%, #77E8C2 100%);
+    color: #061116;
+    transition: transform var(--duration-ui) var(--ease-out-expo), box-shadow var(--duration-ui) var(--ease-out-expo), filter var(--duration-ui) ease;
+  }
+
+  .btn-gradient-cyan-mint:hover {
+    box-shadow: 0 0 25px rgba(101, 216, 245, 0.5), 0 0 40px rgba(119, 232, 194, 0.25);
+    transform: translateY(-2px);
+    filter: brightness(1.03);
+  }
+
+  .btn-gradient-cyan-mint:active {
+    transform: translateY(0);
+    box-shadow: 0 0 15px rgba(101, 216, 245, 0.3);
+  }
+
+  /* Industrial subtle blueprint grid */
+  .bg-industrial-grid {
+    background-image: linear-gradient(to right, rgba(145, 190, 210, 0.05) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(145, 190, 210, 0.05) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  .bg-industrial-dots {
+    background-image: radial-gradient(rgba(101, 216, 245, 0.12) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  /* Scanline effect */
+  .scanline {
+    position: relative;
+    overflow: hidden;
+  }
+  .scanline::after {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+    z-index: 2;
+    background-size: 100% 3px, 6px 100%;
+    pointer-events: none;
+    opacity: 0.6;
+  }
+
+  /* Animated pulse borders */
+  .border-glow-cyan {
+    border-color: rgba(101, 216, 245, 0.4);
+    box-shadow: 0 0 15px rgba(101, 216, 245, 0.15);
+  }
+
+  .border-glow-mint {
+    border-color: rgba(119, 232, 194, 0.4);
+    box-shadow: 0 0 15px rgba(119, 232, 194, 0.15);
+  }
+}
+
+/* Animations */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(0.5deg);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes circuitScan {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes lightSweep {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+/* Respect OS reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

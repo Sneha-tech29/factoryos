@@ -1,0 +1,49 @@
+:root {
+  /* Approved FactoryOS Industrial Control-Room Tokens */
+  --bg-deep: #071017;
+  --bg-canvas: #0a141d;
+  --bg-midnight: #0f1e2b;
+  --bg-panel: #122332;
+  --bg-panel-elevated: #162a3c;
+  --bg-slate: #233b50;
+  --bg-interactive: #1a3246;
+
+  /* Typography Colors */
+  --text-primary: #f0f6fc;
+  --text-secondary: #94a9ba;
+  --text-muted: #5e778d;
+
+  /* Precision Accents */
+  --accent-cyan: #38bdf8;
+  --accent-mint: #34d399;
+  --accent-cyan-light: #7dd3fc;
+  --accent-mint-light: #6ee7b7;
+
+  /* Hairline Industrial Separators */
+  --border-subtle: rgba(148, 180, 205, 0.14);
+  --border-strong: rgba(148, 180, 205, 0.28);
+  --border-active: rgba(56, 189, 248, 0.45);
+
+  /* Industrial Status Palette */
+  --status-ok: #34d399;
+  --status-warn: #f59e0b;
+  --status-critical: #ef4444;
+  --status-info: #38bdf8;
+  --status-idle: #64748b;
+
+  /* Standard Motion Durations */
+  --duration-micro: 140ms;
+  --duration-ui: 220ms;
+  --duration-reveal: 350ms;
+  --duration-cinematic: 600ms;
+
+  /* Refined Industrial Easing Curves */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+
+  /* Restrained Technical Shadows */
+  --shadow-panel: 0 4px 16px -2px rgba(0, 0, 0, 0.45), 0 1px 2px 0 rgba(0, 0, 0, 0.35);
+  --shadow-elevated: 0 10px 30px -4px rgba(0, 0, 0, 0.6), 0 2px 6px 0 rgba(0, 0, 0, 0.4);
+}
+
